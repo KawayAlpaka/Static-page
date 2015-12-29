@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--manifest本地没有测试成功-->
+<html xmlns="http://www.w3.org/1999/xhtml" manifest="demo.appcache">
+<head>
+    <!--<link rel="stylesheet" type="text/css" href="m_style.css" />-->
+    <script src="jquery.min.js"></script>
+    <!--<script src="m_jsfunction.js"></script>-->
+    <title>Hello JS And CSS</title>
+    <script>
+        $(document).ready(function () {
+            $("p").hide();
+            $("button").click(function () {
+                //$("div p").toggle(1000, function () {
+                //    //alert("");
+                //});
+                $("p").offset({ top: 500, left: 500 });
+            });
+            $("#room1").mousemove(function (e) {
+                    x = e.clientX;
+                    y = e.clientY;
+                    if ((x - this.offsetLeft) > room1.start1 && (x - this.offsetLeft) < room1.end1) {
+                        //alert("x:" + x + "\ny:" + y);
+                        //alert("x:" + this.scrollLeft + "\ny:" + this.scrollTop);
+                        //alert("x:" + this.clientLeft + "\ny:" + this.clientTop);
+                        //alert("x:" + this.offsetLeft + "\ny:" + this.offsetTop);
+                        $("#" + this.id + "info").show();
+                        $("#" + this.id + "info").offset({ top: y + 15, left: x + 20 });
+                    }
+                    else {
+                        $("#" + this.id + "info").hide();
+                    }
+            });
+            $("#room2").mousemove(function (e) {
+                x = e.clientX;
+                y = e.clientY;
+                if ((x - this.offsetLeft) > room2.start1 && (x - this.offsetLeft) < room2.end1) {
+                    //alert("x:" + x + "\ny:" + y);
+                    //alert("x:" + this.scrollLeft + "\ny:" + this.scrollTop);
+                    //alert("x:" + this.clientLeft + "\ny:" + this.clientTop);
+                    //alert("x:" + this.offsetLeft + "\ny:" + this.offsetTop);
+                    $("#" + this.id + "info").show();
+                    $("#" + this.id + "info").offset({ top: y + 15, left: x + 20 });
+                }
+                else {
+                    $("#" + this.id + "info").hide();
+                }
+            });
+
+            //$("canvas").mousemove(function (e) {
+            //    x = e.clientX;
+            //    y = e.clientY;
+            //    //alert( this.id );
+            //    //alert("x:" + x + "\ny:" + y);
+            //    if (((x - this.offsetLeft) > room1.start1 && (x - this.offsetLeft) < room1.end1) || ((x - this.offsetLeft) > room2.start1 && (x - this.offsetLeft) < room2.end1)) {
+            //        //alert("x:" + x + "\ny:" + y);
+            //        //alert("x:" + this.scrollLeft + "\ny:" + this.scrollTop);
+            //        //alert("x:" + this.clientLeft + "\ny:" + this.clientTop);
+            //        //alert("x:" + this.offsetLeft + "\ny:" + this.offsetTop);
+
+            //        $("#" + this.id + "info").show();
+            //        $("#" + this.id + "info").offset({ top: y + 15, left: x + 20 });
+            //    }
+            //    else {
+            //        $("#" + this.id + "info").hide();
+            //    }
+
+            //    //if ((x - this.offsetLeft) > room2.start1 && (x - this.offsetLeft) < room2.end1) {
+            //    //    //alert("x:" + x + "\ny:" + y);
+            //    //    //alert("x:" + this.scrollLeft + "\ny:" + this.scrollTop);
+            //    //    //alert("x:" + this.clientLeft + "\ny:" + this.clientTop);
+            //    //    //alert("x:" + this.offsetLeft + "\ny:" + this.offsetTop);
+
+            //    //    $("#" + this.id + "info").show();
+            //    //    $("#" + this.id + "info").offset({ top: y + 15, left: x + 20 });
+            //    //}
+            //    //else {
+            //    //    $("#" + this.id + "info").hide();
+            //    //}
+
+            //});
+            $("canvas").mouseout(function (e) {
+                $("p").hide();
+            });
+            $("p").click(function () {
+                alert("123");
+            });
+        });
+    </script>
+    <script>
+        var room = new Array(3);
+        room[0] = "会议室1";
+        room[1] = "会议室2";
+        room[2] = "会议室3";
+        var yuding1 = new Array();
+
+
+    </script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #main {
+            margin: 50px 0 0 100px;
+        }
+
+            #main ul {
+                width: 1200px;
+                height: 400px;
+                list-style: none;
+            }
+
+            #main li {
+                border-left: 1px solid #ccc;
+                border-top: 1px solid #ccc;
+                /*border-radius: 10px 0px 0px 0px;*/
+                float: left;
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                line-height: 33px;
+                /*padding: 10px 0px 10px 0px;*/
+            }
+
+                #main li.b {
+                    border-bottom: 1px solid #ccc;
+                }
+
+                #main li.r {
+                    border-right: 1px solid #ccc;
+                }
+
+                #main li.t {
+                    height: auto;
+                }
+
+                #main li.F {
+                    width: 1008px;
+                }
+
+        button {
+            height: 24px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px 0px 30px 0px;
+        }
+
+        li .left {
+            float: left;
+            width: 50px;
+        }
+        li .right {
+            float: right;
+            width: 50px;
+        }
+        /*li .none {
+            float:none;
+            width: 50px;
+        }*/
+
+        p {
+            width: 300px;
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>光明新区中心医院会议室预定情况</h1>
+    </div>
+    <div>
+        日期：
+        <input type="date" value="2014-01-13" />
+        <button>测试</button>
+    </div>
+
+
+    <div id="main">
+        <ul>
+            <li class="t">预约</li>
+            <li class="r t F">
+                <div>
+                    <span class="left">6:00</span>
+                    <span >12:00</span>
+                    <span class="right">20:00</span>
+                </div>
+            </li>
+            <li>大会议室</li>
+            <li class="r F">
+                <canvas id="room1" width="1008" height="100" style="border: 1px solid #c3c3c3;">Your browser does not support the canvas element.
+                </canvas>
+            </li>
+            <li class="b">小会议室</li>
+            <li class="b r F">
+                <canvas id="room2" width="1008" height="100" style="border: 1px solid #c3c3c3;">Your browser does not support the canvas element.
+                </canvas>
+            </li>
+        </ul>
+    </div>
+
+    <p id="room1info">
+        会议室名称：大会议室
+        <br />
+        预定人：大王
+        <br />
+        用途：给全院中层干部培训
+        <br />
+        使用时间:2014年12月20日 8:00~10:00
+    </p>
+    <p id="room2info">
+        会议室名称：小会议室
+        <br />
+        预定人：小王
+        <br />
+        用途：开会，讨论如何XXX 
+        <br />
+        使用时间:2014年12月20日 10:00~12:00
+    </p>
+
+    <script type="text/javascript">
+
+        var room1 = new Object();
+        room1.start1 = 120;
+        room1.end1 = 240;
+
+        var room2 = new Object();
+        room2.start1 = 240;
+        room2.end1 = 360;
+
+        var c = document.getElementById("room1");
+        var cxt = c.getContext("2d");
+
+        var grd = cxt.createLinearGradient(0, 0, 0, 1);
+        grd.addColorStop(0, "#FF0000");
+        grd.addColorStop(1, "#FF0000");
+        cxt.fillStyle = grd;
+        cxt.fillRect(room1.start1, 0, room1.end1 - room1.start1, 100);
+
+        c = document.getElementById("room2");
+        cxt = c.getContext("2d");
+
+        grd = cxt.createLinearGradient(0, 0, 0, 1);
+        grd.addColorStop(0, "#FF0000");
+        grd.addColorStop(1, "#FF0000");
+        cxt.fillStyle = grd;
+        cxt.fillRect(room2.start1, 0, room2.end1 - room2.start1, 100);
+
+    </script>
+
+</body>
+</html>

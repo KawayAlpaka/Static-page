@@ -1,0 +1,38 @@
+html   
+html  lang="zh-cn"   
+  head   
+    meta  charset="utf-8"   
+    meta  http-equiv="X-UA-Compatible"  content="IE=edge"   
+    meta  name="viewport"  content="width=device-width, initial-scale=1.0"   
+    meta  name="description"  content=""   
+    meta  name="author"  content=""   
+    link  rel="shortcut icon"  href="favicon.png"   
+    title   Starter Template for Bootstrap
+    link  href="footer.css"  rel="stylesheet"   
+    script  src="jquery.min.js"   
+    script  src="bootstrap.min.js"   
+  body   
+    .footer-widgets   
+      .content-inner   
+        .one-half   
+          .widget.widget-text   
+            h6   关于幕格·宜贷通
+            p   深圳前海幕格金融服务科技发展有限公司致力于互联网金融行业的产品研发，公司拥有专业高效的互联网产品研发、数据分析团队，由多位资深港科大教授顾问领队，建立了精准的风控体系以及自优化的多级风控模型。宜贷通是深圳前海幕格金融服务科技发展有限公司重金打造的贷款撮合平台，通过持续的微创新，为小额贷款行业提供全方位的服务。
+            a  target="_blank"  href="/home/help"   帮助中心
+            .social-icons.light.clearfix   
+        .one-other   
+          .widget.widget-info   
+            h6   联系方式
+            p   广东省深圳市南山区科兴科学园A2栋1203室
+            p   电话：0755-86510295
+            p   传真：0755-86510296
+            p   服务热线：4008-699-398
+        .one-fifth.last-col   
+          .widget   
+            h6   微信扫一扫 
+            p   
+                     微信号:宜贷通
+                     
+              img  src="/material/theme/langd/cms/images/weixin.jpg"  width="130px"   
+              br   
+        .clear   

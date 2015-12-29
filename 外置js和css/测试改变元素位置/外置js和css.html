@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--manifest本地没有测试成功-->
+<html xmlns="http://www.w3.org/1999/xhtml" manifest="demo.appcache">
+<head>
+    <!--<link rel="stylesheet" type="text/css" href="m_style.css" />-->
+    <script src="jquery.min.js"></script>
+    <!--<script src="m_jsfunction.js"></script>-->
+    <title>Hello JS And CSS</title>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                //$("div p").toggle(1000, function () {
+                //    //alert("");
+                //});
+                $("p").offset({ top: 500, left: 500 });
+            });
+            $("button").mousemove(function (e) {
+                x = e.clientX;
+                y = e.clientY;
+                //alert("x:" + x + "\ny:" + y);
+                $("p").show();
+                $("p").offset({ top: y + 15, left: x + 20 });
+            });
+            $("button").mouseout(function (e) {
+                $("p").hide();
+            });
+            $("p").click(function () {
+                alert("123");
+            });
+        });
+    </script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #main {
+            margin: 50px 0 0 100px;
+        }
+
+            #main ul {
+                width: 1200px;
+                height: 165px;
+                list-style: none;
+            }
+
+            #main li {
+                border-left: 1px solid #ccc;
+                border-top: 1px solid #ccc;
+                border-radius: 10px 0px 0px 0px;
+                float: left;
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                line-height: 33px;
+                /*padding: 10px 0px 10px 0px;*/
+            }
+
+                #main li.b {
+                    border-bottom: 1px solid #ccc;
+                }
+
+                #main li.r {
+                    border-right: 1px solid #ccc;
+                }
+
+                #main li.F {
+                    width: 1008px;
+                }
+
+        button {
+            height: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px 0px 30px 0px;
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>光明新区中心医院会议室预定情况</h1>
+    </div>
+    <div>
+        日期：
+        <input type="date" value="2014-01-13" />
+        <button>测试</button>
+    </div>
+<!--    <div id="ttt">
+        <p>江珊预定111</p>
+    </div>-->
+
+    <div id="main">
+        <ul>
+            <li></li>
+            <li>6:00</li>
+            <li>8:00</li>
+            <li>10:00</li>
+            <li>12:00</li>
+            <li>14:00</li>
+            <li>16:00</li>
+            <li>18:00</li>
+            <li>20:00</li>
+            <li>22:00</li>
+            <li class="r">24:00</li>
+            <li>大会议室</li>
+            <li class="r F">
+                <canvas id="Canvas1" width="1008" height="100" style="border: 1px solid #c3c3c3;">Your browser does not support the canvas element.
+                </canvas>
+            </li>
+            <li class="b">小会议室</li>
+            <li class="b r F">
+                <canvas id="Canvas2" width="1008" height="100" style="border: 1px solid #c3c3c3;">Your browser does not support the canvas element.
+                </canvas>
+            </li>
+        </ul>
+    </div>
+
+
+    <script type="text/javascript">
+
+        var c = document.getElementById("Canvas1");
+        var cxt = c.getContext("2d");
+        var grd = cxt.createLinearGradient(0, 0, 500, 0);
+        grd.addColorStop(0, "#FF0000");
+        grd.addColorStop(1, "#00FF00");
+        cxt.fillStyle = grd;
+        cxt.fillRect(0, 0, 175, 100);
+
+    </script>
+    <div>123</div>
+    <p>江珊预定 <br />222</p>
+    <p>江珊预定333</p>
+</body>
+</html>

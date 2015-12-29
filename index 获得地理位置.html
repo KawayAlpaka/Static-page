@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test</title>
+    <meta charset="gb2312">
+    <script type="text/javascript">
+        function getLocation()
+        {
+            //alert("1");
+            if (navigator.geolocation)
+            {
+                //alert("2");
+                navigator.geolocation.getCurrentPosition(showPosition,showerror);
+            }
+            else{
+                //alert("3");
+                zuobiao.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+        function showPosition(position)
+        {
+            var zuobiao = document.getElementById("demo");
+            //alert("su");
+            //alert("Latitude: " + position.coords.latitude + "<br />Longitude: " + position.coords.longitude);
+            //alert(zuobiao.innerHTML);
+            zuobiao.innerHTML="纬度: " + position.coords.latitude +  "<br />经度: " + position.coords.longitude;	
+        }
+        function showerror(err) {
+            var cuowu = document.getElementById("demo");
+            cuowu.innerHTML = err.message;
+            //alert(err.message);
+        }
+</script>
+</head>
+<body>
+<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=01f33c88bc5d3ea5febfcf0f45a7d324d66118d926319ae0caf7f274f395f06e"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="深圳水果零售交流" title="深圳水果零售交流"></a>
+<h1 id="demo">点击这个按钮，获得您的坐标：</h1>
+<button onclick="getLocation()">试一下</button>
+</body>
+</html>

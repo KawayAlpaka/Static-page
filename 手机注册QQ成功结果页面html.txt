@@ -1,0 +1,195 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="robots" content="all" />
+<meta name="keywords" content="注册" />
+<meta name="description" content="注册" />
+<meta name="author" content="tencent" />
+<meta name="copyright" content="www.tencent.com" />
+
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+<meta http-equiv="expires" content="-1" />
+
+<title>QQ注册</title>
+<link rel="stylesheet" href="http://5.url.cn/zc/chs/css/10062/index.css" type="text/css" />
+<link rel="stylesheet" href="http://5.url.cn/zc/chs/css/10062/ok_phone.css" type="text/css" />
+<link rel="stylesheet" href="http://5.url.cn/zc/chs/css/10062/g.css" type="text/css" />
+</head>
+<body>
+<div class="cover" id="cover"></div>
+  <iframe id="helpFriend_iframe" class="helpFriend_iframe" frameborder="0" allowtransparency="true">
+  </iframe>
+<div class="bg">
+	<div class="container">
+
+		<div class="header"> <a href="index.html" class="logo" target="_self" title="QQ注册"></a> <a onclick="feedBack(716);" class="feedback" target="_blank" title="">意见反馈</a> </div>
+		<div class="content">
+			<div class="left"> 
+				<a id="nav_1" class="nav_box" href="javascript:goToReg(0);" > <span class="dt nav_1">QQ帐号</span> <span class="dd">由数字组成，经典通行帐号</span> </a> 
+				<a id="nav_3" class="nav_box" href="javascript:goToReg(3);">
+                    <span class="dt nav_3">手机帐号</span> <span class="dd">便于登录、保护QQ帐号</span>
+                </a> 
+ 
+				<a id="nav_2" class="nav_box" href="javascript:goToReg(1);"> <span class="dt nav_2">邮箱帐号</span> <span class="dd">用邮箱地址注册，便于记忆</span> </a>
+				<div class="search">
+					<div class="ipt_box">
+						<form class="search_form"  method="get" action="http://haoma.qq.com/search_gno.php?service=1&from=freeqqm&url=http%3A%2F%2Fhaoma.qq.com%2Fgno.php" target="_blank" onsubmit="return g.formSubmit();">
+						 <input type="hidden" name="service" value="1" />
+						 <input type="hidden" name="from" value="freeqqm" />
+						 <input type="hidden" name="url" value="http%3A%2F%2Fhaoma.qq.com%2Fgno.php" />
+						 <input name="number" class="txt" autocomplete="off" type="text" style="z-index:0;" value="输入要查找的QQ号码"  onblur="g.searchBlur(this)" onfocus="g.searchFocus(this)"  id="serch_ipt"/>
+						 <input class="btn" type="submit" value=""/>
+						 </form>
+						<div class="clear"></div>
+					</div>
+					<ul>
+						<li ><a class="item_1" href="javascript:g.openHaoma(1);" >生日</a></li>
+						<li ><a class="item_2" href="javascript:g.openHaoma(2)" >爱情</a></li>
+						<li ><a class="item_3" href="javascript:g.openHaoma(5)" >手机</a></li>
+						<li ><a class="item_4" href="javascript:g.openHaoma(4)" >年度</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="right">
+
+								<div>
+				<!-- begin -->
+					<div class="main main_new">
+						<div class="main_inner main_inner_new">
+							<div class="reg_msg_new msyh_new">
+								<div class="msg_info_new">
+								 	<p><span>申请成功，</span><span>获得手机账号：</span></p>
+	                        		<p id="rember_uin" class="green_text_new"><span  class="green" id="phone_num"></span></p>						
+									<p id="rember_uin" style="font-size:14px;" ><span>已绑定QQ号码：</span><span class="text" id="newUin"></span></p>
+									<p>
+									<span class="account_icon">
+	                                 <a href="javascript:gotoAccount();" id="bind_phone_login" class="loginIcon useIcon" title="可用于登录QQ"></a>
+	                                  <a href="javascript:gotoAccount();" id="bind_phone_show" class="showIcon useIcon" title="可设置为主显帐号"></a>
+	                                  <a href="javascript:gotoAccount();" id="bind_phone_search" class="searchIcon useIcon" title="可被好友查找到"></a>
+	                                  <a href="javascript:gotoGuardPhone();" id="bind_phone_pwd" class="pwdIcon useIcon" title="可用作密保手机"></a>
+	                                  </span>
+									</p>
+								</div>
+								<div class="login_wrap_new">
+                       				 <div id="loginList" class="login_bg_new">
+                        		  		  <span id="login_btn" class="new_login_btn" >
+                           		   		  <a tabindex="3" title="登录QQ" id="loginToQQ" target="_blank" class="login_btn_new msyh_new " href="javascript:;"></a>
+                          			 	 </span>
+                               			 <a title="更多登录选项" tabindex="4" id="loginArea" href="javascript:void(0)" class="login_area">
+                                		</a>
+                                		<div style="display:none" id="loginSelect" class="login_select">
+                                   			<ul id="loginTo">              
+                                    		</ul>
+                                		</div>
+                        			</div>
+                    			</div>
+                    			<div class="downMpQQ">
+			                        <div class="todo">
+			                            <p class="youCan">您可以</p>
+			                            <p class="youCan1">随时随地联系好友</p>
+			                            <p class="youCan2">畅聊不间断</p>
+			                        </div>
+			                        <div class="toDownQQLink">
+			                            <a class="downMpQQ_btn" href="http://fwd.3g.qq.com:8080/forward.jsp?bid=1032" target="_blank" title="下载QQ手机版" onclick="$.TCSS.report('hotClick','ZC.CHS.SUCC.PhoneToMPQQ')"></a>
+			                        </div>
+			                        <div class="clear"></div>
+                    			</div>
+                    			                    <!--简体绑定辅助帐号-->
+			                    <div class="alsoDo" style="width:475px; overflow:hidden;">
+			                        <div class="bind_area" id="bind_area">
+			                            <div class="bind_logo_new">
+			                                <span class="bind_logo_c_new" id="bind_logo_c">您还可以</span>
+			                            </div>
+
+			                             <div id="help_friend" class="help_friend_new">
+			                                <span class="toCloneFriend_new">批量克隆好友</span>
+			                                <span class="help_friend_logo_btn_new">
+			                                    <a id="help_friend_logo" class="help_friend_logo_new" href="javascript:loginAction.showHelpFriend();">克隆</a>
+			                                </span>
+			                            </div>
+			                            <div class="clear" style=""></div>
+			                        </div>
+			                    </div>
+								<div class="clear"></div>
+							</div>
+							
+							<div class="clear"></div>
+							<div style="height:100px;"></div>
+							<!--ignore:_ok_ad-->
+							<div class="clear"></div>
+							<div id="app_slide" class="app_slide">
+								
+								<div class="slide_wrap">
+								<span id="prevSlide" href="javascript:void(0)" class="prev_slide_d"></span>
+								<div class="slide_main">
+									<ol id="slideList" class="slides" style="left:0px">
+				  
+									</ol>
+									
+									<ol id="slideControl" class="control"> </ol>
+								</div>
+								<span id="nextSlide" href="javascript:void(0)" class="next_slide"></span>
+								</div>
+								
+								<div id="appInfo" class="app_info hide">
+									<div class="app_info_top"></div>
+									<div class="app_info_mid">
+										<h2></h2>
+										<p></p>
+										<a class="button" href="javascript:void(0);"></a>
+									</div>
+									<div class="app_info_bot"></div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				<!-- end -->
+				</div>
+
+				    
+   			 			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<div class="footer">Copyright <span>?</span> 1998-2014 Tencent All Rights Reserved  腾讯公司 版权所有</div>
+<div id="emailDialog" class="email_dialog" style="display:none">
+<a href="javascript:;" id="edClose" title="关闭" class="ed_close">&nbsp;</a>
+<div class="ed_title">发送邮件</div>
+<div id="edStep1" class="ed_step">
+	<div class="ed_mid"><div class="ed_mid_l">
+		<label for="myEmail">邮箱：</label>
+	</div><div class="ed_mid_l">
+		<input id="myEmail" type="text" />
+	</div></div>
+	<div class="ed_bottom"><span id="emailInfo" class="hidden"></span><input id="btnSend" type="button" value="发送" /><input id="btnCancel" type="button" value="取消"/></div>
+</div>
+<div id="edStep2" class="ed_step">
+	<div class="ed_mid2">QQ号码已发送至您的邮箱，请<a href="javascript:;" id="edGoToMyEmail" class="flat">登录邮箱</a>进行查看。</div>
+</div>
+<div id="edStep3" class="ed_step">
+	<div id="edMsg" class="ed_mid2"></div>
+</div>
+</div>
+<script src="http://4.url.cn/zc/chs/js/10062/simple.js" type="text/javascript"></script>
+<script type="text/javascript">
+$('newUin').innerHTML = $.cookie.getNewUin();
+</script>
+<script src="http://4.url.cn/zc/chs/js/10062/ok_chs.js?v=3" type="text/javascript" ></script>
+ <script src="http://4.url.cn/zc/chs/js/10062/send.js" type="text/javascript"></script>
+<script type="text/javascript">
+loginAction.init();
+send.init();
+loginAction.showRemenberTip();
+$.bom = {query:function(n){var m = window.location.search.match(new RegExp( "(\?|&)"+n+"=([^&]*)(&|$)")); return !m ? "":decodeURIComponent(m[2]); } };
+$.loadScript = function (src, callback, err) {var tag = document.createElement("script"); if(callback){tag.onload = tag.onreadystatechange = function() {if ( !this.readyState ||this.readyState === "loaded" || this.readyState === "complete") {callback(); tag.onload = tag.onreadystatechange = null; if (tag.parentNode ) {tag.parentNode.removeChild( tag ); } } }; } tag.src = src; document.getElementsByTagName("head")[0].appendChild(tag); };
+$.TCSS = (function(){var shift = Array.prototype.shift; var report = function() {var funName = shift.call(arguments); if(!funName) return; var fun,_arguments = arguments; if(window.TCISD && (fun = TCISD[funName])){fun.apply(null,_arguments); }else{$.loadScript('http://1.url.cn/act/home/js/1/tcss.js', function(){if(window.TCISD && (fun = TCISD[funName])){fun.apply(null,_arguments); } }); } return fun; }; return {report  :  report }; })();
+</script>
+</body>
+</html>

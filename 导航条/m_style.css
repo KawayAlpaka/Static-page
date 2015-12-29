@@ -1,0 +1,47 @@
+.btn-free
+{  
+  min-height:20%;
+  min-width:10%;
+  margin:5px;  
+}
+
+  .container .m_jumbotron 
+  {
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    margin-bottom:10px;
+    margin-top:10px;
+    color:inherit;
+    background-color:#eeeeee;
+}
+.width_40 {
+    width:40%;
+}
+
+.nomargin {
+    margin-bottom:0px;
+    margin-top:0px;
+}
+
+.nopadding {
+    padding-bottom:1px;
+    padding-top:1px;
+}
+
+ /*.container  
+  {
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    margin-bottom:10px;
+    margin-top:10px;
+    color:inherit;
+    background-color:#eeeeee;
+}*/

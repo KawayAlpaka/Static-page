@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="gb2312">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>Fixed Top Navbar Example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.css" rel="stylesheet">
+
+    <!-- my CSS -->
+    <link href="m_style.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://v3.bootcss.com/examples/navbar/navbar.css" rel="stylesheet">
+
+
+    <!-- Bootstrap theme -->
+    <link href="bootstrap-theme.min.css" rel="stylesheet">
+
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+
+        var food_xuhao = new Array(300);
+        var food_number = new Array(300);
+        var food_name = new Array(300);
+        var food_price = new Array(300);
+        var food_class_xuhao = new Array(300);
+        var food_class_name = new Array(300);
+
+        food_xuhao[0] = 1;
+        food_number[0] = "T0001";
+        food_name[0] = "大白菜";
+        food_price[0] = 15;
+        food_class_xuhao[0] = 1;
+        food_class_name[0] = "时蔬";
+        
+        food_xuhao[1] = 2;
+        food_number[1] = "T0002";
+        food_name[1] = "大白菜2";
+        food_price[1] = 15;
+        food_class_xuhao[1] = 1;
+        food_class_name[1] = "时蔬";
+
+        food_xuhao[2] = 3;
+        food_number[2] = "T0003";
+        food_name[2] = "大白菜3";
+        food_price[2] = 15;
+        food_class_xuhao[2] = 2;
+        food_class_name[2] = "时蔬2";
+
+        var m_food = "辣子鸡";
+
+        function test() {
+            var a = "<tr><td>1</td><td>T007</td><td>紫菜蛋汤</td><td>10元</td><td><button type=\"button\" class=\"btn btn-default btn nomargin\">删除</button></td> </tr><tr><td>2</td><td>T43921</td><td>番茄蛋汤</td><td>12.5元</td><td><button type=\"button\" class=\"btn btn-default btn\">删除</button></td></tr><tr><td>3</td><td>T593</td><td>冬瓜排骨汤</td><td>18元</td><td><button type=\"button\" class=\"btn btn-default btn\">删除</button></td></tr><tr><td>4</td><td>T593</td> <td>冬瓜排骨汤</td><td>18元</td><td><button type=\"button\" class=\"btn btn-default btn\">删除</button></td></tr><tr><td>5</td><td>合计</td><td></td><td>58.5元</td><td><button type=\"button\" class=\"btn btn-default btn\">打印</button></td></tr>";
+            document.getElementById("orderlist").innerHTML = a;
+        }
+        function test2() {
+            document.getElementById("btn2").className = "btn btn-free btn-success";
+            //#5cb85c  绿色-success
+            //#428bca  蓝色-primary
+        }
+        function test3() {
+            //alert(m_food);
+            //for (var i = 0; i < cars.length; i++);
+            //alert(food_name.length);
+
+            //if (food_name[0] == null)
+            //    alert(1);
+            //else
+            //    alert(food_name[0]);
+
+
+            //建立菜品分类列表标题栏tab
+            var html_ul = "<ul class=\"nav nav-tabs\">";
+
+            var htmlstr = html_ul;
+
+            htmlstr = htmlstr + "<li class=\"active\"><a href=\"#" + food_class_xuhao[0].toString() + "\" data-toggle=\"tab\">" + food_class_name[0] + "</a></li>";
+
+            for (var i = 1; food_class_xuhao[i] != null ; i++) {
+                if (food_class_xuhao[i] == food_class_xuhao[i - 1])
+                    ;
+                else
+                    htmlstr = htmlstr + "<li><a href=\"#" + food_class_xuhao[i].toString() + "\" data-toggle=\"tab\">" + food_class_name[i] + "</a></li>";
+            }
+            htmlstr = htmlstr + "</ul>";
+
+
+
+            //建立列表
+            var firstList_flag = true;
+            htmlstr = htmlstr + "<div class=\"tab-content\">";
+            for (var i = 0; food_class_xuhao[i] != null ; i++) {
+                //建立列表标题，判断是否是新的一列
+                if (i == 0 || food_class_xuhao[i] != food_class_xuhao[i - 1]) { //i-1可能小于0
+                    //第判断是否第一个列表
+                    if (firstList_flag == true) {
+                        htmlstr = htmlstr + "<div class=\"tab-pane  fade in active\" id=\"" + food_class_xuhao[i].toString() + "\">";
+                        firstList_flag = false;
+                    }
+                    else {
+                        htmlstr = htmlstr + "<div class=\"tab-pane  fade\" id=\"" + food_class_xuhao[i].toString() + "\">";
+                    }
+
+                    htmlstr = htmlstr + "<div class=\"row row-bord\">";
+                    htmlstr = htmlstr + "<div class=\"col-ml-4\">";
+                    htmlstr = htmlstr + "<table class=\"table table-striped\">";
+
+                    htmlstr = htmlstr + "<thead>";
+                    htmlstr = htmlstr + "<tr>";
+                    htmlstr = htmlstr + "        <th>#</th>";
+                    htmlstr = htmlstr + "        <th>编号</th>";
+                    htmlstr = htmlstr + "        <th>菜名</th>";
+                    htmlstr = htmlstr + "        <th>单价</th>";
+                    htmlstr = htmlstr + "        <th></th>";
+                    htmlstr = htmlstr + "    </tr>";
+                    htmlstr = htmlstr + "</thead>";
+                    htmlstr = htmlstr + "<tbody>";
+                }
+
+                //添加列表内容
+                htmlstr = htmlstr + "    <tr>";
+                htmlstr = htmlstr + "        <td>1</td>";
+
+                htmlstr = htmlstr + "        <td>" + food_number[i] + "</td>";
+                htmlstr = htmlstr + "        <td>" + food_name[i] + "</td>";
+                htmlstr = htmlstr + "        <td>" + food_price[i].toString() + "元</td>";
+
+                htmlstr = htmlstr + "        <td>";
+                htmlstr = htmlstr + "            <button type=\"button\" class=\"btn btn-default btn nomargin\">选择</button></td>";
+                htmlstr = htmlstr + "    </tr>";
+
+                //判断该列是否要结束
+                if (food_class_xuhao[i] != food_class_xuhao[i + 1] || food_class_xuhao[i + 1] == null) { //i-1可能小于0
+                    alert(food_class_xuhao[i].toString() + "," + food_number[i]);
+                    htmlstr = htmlstr + " </tbody>";
+                    htmlstr = htmlstr + "</table>";
+                    htmlstr = htmlstr + "</div>";
+                    htmlstr = htmlstr + "</div>";
+                    htmlstr = htmlstr + "</div>";
+                }
+            }
+            htmlstr = htmlstr + "</div>";
+
+
+            document.getElementById("caidan").innerHTML = htmlstr;
+            alert(htmlstr);
+
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">开始</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right" role="form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">登录</button>
+                    <button type="button" class="btn btn-success">免费注册</button>
+                </form>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </div>
+    <!--theme-showcase-->
+    <p>1</p>
+    <div class="container ">
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="m_jumbotron">
+            <button type="button" onclick="test()" class="btn btn-free btn-success">W1号座</button>
+            <button type="button" onclick="test2()" class="btn btn-free btn-primary" id="btn2">12号座</button>
+            <button type="button" onclick="test3()" class="btn btn-free btn-success">13号座</button>
+            <button type="button" class="btn btn-free btn-success">14号座</button>
+            <button type="button" class="btn btn-free btn-success">15号座</button>
+            <button type="button" class="btn btn-free btn-success">16号座</button>
+            <button type="button" class="btn btn-free btn-success">17号座</button>
+            <button type="button" class="btn btn-free btn-success">18号座</button>
+            <button type="button" class="btn btn-free btn-success">19号座</button>
+            <button type="button" class="btn btn-free btn-success">10号座</button>
+            <button type="button" class="btn btn-free btn-success">11号座</button>
+            <button type="button" class="btn btn-free btn-success">12号座</button>
+            <button type="button" class="btn btn-free btn-success">13号座</button>
+            <button type="button" class="btn btn-free btn-success">14号座</button>
+            <button type="button" class="btn btn-free btn-success">15号座</button>
+            <button type="button" class="btn btn-free btn-success">16号座</button>
+            <button type="button" class="btn btn-free btn-success">17号座</button>
+            <button type="button" class="btn btn-free btn-success">18号座</button>
+            <button type="button" class="btn btn-free btn-success">19号座</button>
+            <button type="button" class="btn btn-free btn-success">20号座</button>
+            <button type="button" class="btn btn-free btn-success">21号座</button>
+            <button type="button" class="btn btn-free btn-success">22号座</button>
+            <button type="button" class="btn btn-free btn-success">23号座</button>
+            <button type="button" class="btn btn-free btn-success">24号座</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+            <div class="container theme-showcase">
+                <!-- Main jumbotron for a primary marketing message or call to action -->
+                <div class="m_jumbotron width_40">
+                    <!--<ul class="nav navbar-nav">-->
+                    <!--                <li>
+                    <input type="text" class="form-control" value="菜品编号"></li>
+                <li>
+                    <button type="button" class="btn btn btn-default">确认</button></li>-->
+                    <!--                <input type="text" class="form-control" value="菜品编号">
+                <button type="button" class="btn btn btn-default">确认</button>-->
+                    <!--</ul>-->
+                    <form class="navbar-form" role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control">
+                        </div>
+                        <button type="button" class="btn btn-default">确认</button>
+                    </form>
+                </div>
+            </div>
+            <div class="container theme-showcase">
+                <div class="m_jumbotron width_40" id="caidan">
+                    <!-- Nav tabs -->
+                                <ul class="nav nav-tabs">
+                <li class="active"><a href="#fenlei1" data-toggle="tab">主食</a></li>
+                <li><a href="#fenlei2" data-toggle="tab">汤类</a></li>
+                <li><a href="#fenlei3" data-toggle="tab">混炒</a></li>
+                <li><a href="#fenlei4" data-toggle="tab">素菜</a></li>
+                <li><a href="#fenlei5" data-toggle="tab">饮料</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane  fade" id="fenlei2">
+                    <p>敬请期待</p>
+                </div>
+                <div class="tab-pane  fade in active" id="fenlei1">
+                    <div class="row row-bord">
+                        <div class="col-ml-4">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>编号</th>
+                                        <th>菜名</th>
+                                        <th>单价</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>T007</td>
+                                        <td>紫菜蛋汤</td>
+                                        <td>10元</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default btn nomargin">选择</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>T43921</td>
+                                        <td>番茄蛋汤</td>
+                                        <td>12.5元</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default btn">选择</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>T593</td>
+                                        <td>冬瓜排骨汤</td>
+                                        <td>18元</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default btn">选择</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="fenlei3">
+                    <div class="row row-bord">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>编号</th>
+                                    <th>菜名</th>
+                                    <th>单价</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>T007</td>
+                                    <td>紫菜蛋汤</td>
+                                    <td>10元</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn nomargin">选择</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>T43921</td>
+                                    <td>番茄蛋汤</td>
+                                    <td>12.5元</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn">选择</button></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>T593</td>
+                                    <td>冬瓜排骨汤</td>
+                                    <td>18元</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn">选择</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="fenlei4">
+                    <div class="row row-bord">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>编号</th>
+                                    <th>菜名</th>
+                                    <th>单价</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>T007</td>
+                                    <td>紫菜蛋汤</td>
+                                    <td>10元</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn nomargin">选择</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>T43921</td>
+                                    <td>番茄蛋汤</td>
+                                    <td>12.5元</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn">选择</button></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>T593</td>
+                                    <td>冬瓜排骨汤</td>
+                                    <td>18元</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn">选择</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="container theme-showcase">
+                <div class="m_jumbotron width_40">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>编号</th>
+                                <th>菜名</th>
+                                <th>单价</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="orderlist">
+                            <!--                            <tr>
+                                <td>1</td>
+                                <td>T007</td>
+                                <td>紫菜蛋汤</td>
+                                <td>10元</td>
+                                <td>
+                                    <button type="button" class="btn btn-default btn nomargin">删除</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>T43921</td>
+                                <td>番茄蛋汤</td>
+                                <td>12.5元</td>
+                                <td>
+                                    <button type="button" class="btn btn-default btn">删除</button></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>T593</td>
+                                <td>冬瓜排骨汤</td>
+                                <td>18元</td>
+                                <td>
+                                    <button type="button" class="btn btn-default btn">删除</button></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>T593</td>
+                                <td>冬瓜排骨汤</td>
+                                <td>18元</td>
+                                <td>
+                                    <button type="button" class="btn btn-default btn">删除</button></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>合计</td>
+                                <td></td>
+                                <td>58.5元</td>
+                                <td>
+                                    <button type="button" class="btn btn-default btn">打印</button></td>
+                            </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+</body>
+</html>

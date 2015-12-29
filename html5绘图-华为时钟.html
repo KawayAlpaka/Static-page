@@ -1,0 +1,115 @@
+<html>
+<head>
+    <script type="text/javascript">
+
+        function inti() {
+            //var du1 = Math.PI / 180;
+            //var c = document.getElementById("myCanvas");
+            //var cxt = c.getContext("2d");
+            //for (var i = 0 ; i < 360; i++) {
+            //    cxt.moveTo(180 + Math.sin(i * du1) * 140, 180 + Math.cos(i * du1) * 140);
+            //    cxt.lineTo(180 + Math.sin(i * du1) * 155, 180 + Math.cos(i * du1) * 155);
+            //}
+
+            //var today = new Date();
+            //var h = today.getHours();
+            //var m = today.getMinutes();
+            //var s = today.getSeconds();
+            //var ms = today.getMilliseconds();
+
+            //for (var i = -15; i < 16; i++) {
+            //    cxt.moveTo(180 + Math.sin((6 * s + i) * du1) * 155, 180 + -1 * Math.cos((6 * s + i) * du1) * 155);
+            //    cxt.lineTo(180 + Math.sin((6 * s + i) * du1) * (155 + 15 - Math.abs(i)), 180 + -1* Math.cos((6 * s + i) * du1) * (155 + 15 - Math.abs(i)));
+            //}
+            //cxt.stroke();
+            //cxt.clearRect(0, 0, 360, 180);
+            startTime();
+        }
+
+        function startTime() {
+
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            var ms = today.getMilliseconds();
+			
+			var s2ms = 0.001;  		//秒与毫秒转换比例
+			var width = 9;			//指针宽度
+			var start_len = 100;	//起始长度
+			var end_len = 110;		//默认结束长度
+			var refresh_cycle = 32;	//刷新周期(ms)
+
+            //alert(ms);
+            var du1 = Math.PI / 180;
+            var c = document.getElementById("myCanvas");
+            var cxt = c.getContext("2d");
+            cxt.beginPath();
+
+            for (var i = 0 ; i < 360; i=i+2) {
+                cxt.moveTo(180 + Math.sin(i * du1) * start_len, 180 + (-1) * Math.cos(i * du1) * start_len);
+                if (Math.abs(6 * (s + s2ms * ms) - i) > width && Math.abs(6 * (s + s2ms * ms) - (i + 360)) > width && Math.abs(6 * (s + s2ms * ms) - (i - 360)) > width) {
+                    cxt.lineTo(180 + Math.sin(i * du1) * end_len, 180 + (-1) * Math.cos(i * du1) * end_len);
+                }
+                else if (Math.abs(6 * (s + s2ms * ms) - (i + 360) )<= width) {
+                    var maxdian = (6 * (s + s2ms * ms));
+                    var huitudianPianYi = Math.abs(maxdian - (i + 360));
+                    var huitudianchangdu = width - huitudianPianYi;
+                    cxt.lineTo(180 + Math.sin(i * du1) * (end_len + 2 * huitudianchangdu), 180 + (-1) * Math.cos(i * du1) * (end_len + 2 * huitudianchangdu));
+                }
+                else if (Math.abs(6 * (s + s2ms * ms) - (i - 360)) <= width){
+                    var maxdian = (6 * (s + s2ms * ms));
+                    var huitudianPianYi = Math.abs(maxdian - (i - 360));
+                    var huitudianchangdu = width - huitudianPianYi;
+                    cxt.lineTo(180 + Math.sin(i * du1) * (end_len + 2 * huitudianchangdu), 180 + (-1) * Math.cos(i * du1) * (end_len + 2 * huitudianchangdu));
+                }
+                else{
+                    var maxdian = (6 * (s + s2ms * ms));
+                    var huitudianPianYi = Math.abs(maxdian - (i));
+                    var huitudianchangdu = width - huitudianPianYi;
+                    cxt.lineTo(180 + Math.sin(i * du1) * (end_len + 2 * huitudianchangdu), 180 + (-1) * Math.cos(i * du1) * (end_len + 2 * huitudianchangdu));
+                }
+            }
+			
+            cxt.clearRect(0, 0, 360, 360);
+            cxt.stroke();
+			
+			//更新时间显示
+			document.getElementById("now-time").innerHTML = h + ":" + m + ":"+ s;
+			
+            t = setTimeout("startTime()", refresh_cycle);
+        }
+
+        function test() {
+            var c = document.getElementById("myCanvas");
+            //c.clearAttributes();
+            var cxt = c.getContext("2d");
+            cxt.moveTo(0, 0);
+            cxt.lineTo(360, 360);
+            cxt.stroke();
+            cxt.beginPath();
+            cxt.moveTo(360, 0);
+            cxt.lineTo(0, 360);
+            cxt.stroke();
+            //cxt.clearRect(0, 0, 360, 360);
+        }
+
+    </script>
+    <style type="text/css">
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="inti()">
+    <div>
+        <p id="p1"></p>
+    </div>
+    <canvas id="myCanvas" width="360" height="360" style="border: 1px solid #c3c3c3;">Your browser does not support the canvas element.
+    </canvas>
+	<div>
+		<span id="now-time"></span>
+		<button onclick="test()">测试按钮</button>
+	</div>
+</body>
+</html>

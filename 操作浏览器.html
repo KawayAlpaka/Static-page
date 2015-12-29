@@ -1,0 +1,35 @@
+<html>
+<head>
+<script type="text/javascript">
+	//打开新窗口 - 测试不成功
+	function open(){
+		window.open() ;
+		}
+	//关闭窗口 - 测试不成功	
+	function close(){
+		window.close() ;
+		}
+	//显示窗口大小
+	function ShowHeightAndWidth(){
+		var w=window.innerWidth
+		|| document.documentElement.clientWidth
+		|| document.body.clientWidth;
+
+		var h=window.innerHeight
+		|| document.documentElement.clientHeight
+		|| document.body.clientHeight;
+
+		x=document.getElementById("p1");
+		x.innerHTML="浏览器的内部窗口宽度：" + w + "，高度：" + h + "。"
+		}
+</script>
+</head>
+<body>
+<div >
+	<button onclick="open()" > 打开 </button>
+	<button onclick="close()" > 关闭 </button>
+	<button onclick="ShowHeightAndWidth()" > 显示窗口大小 </button>
+	<p id = "p1"> </p>
+</div>
+</body>
+</html>

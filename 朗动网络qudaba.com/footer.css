@@ -1,0 +1,140 @@
+.footer-widgets {
+  padding: 60px 0px 30px;
+  background-color: #323a45;
+  color: #ffffff;
+}
+
+.one-half {
+  width: 48.75%;
+}
+
+a, h6, p {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  font-style: inherit;
+  vertical-align: baseline;
+  white-space: normal;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+div {
+  display: block;
+}
+
+::selection {
+  color: #ffffff;
+  background-color: #7ececf;
+}
+
+
+.content-inner {
+  margin: 0px auto;
+  padding: 0px 15px;
+  max-width: 1200px;
+  position: relative;
+}
+
+
+.one-half {
+  width: 48.75%;
+}
+
+.one-other {
+  width: 27.125%;
+}
+
+.last-col {
+  margin-right: 0px !important;
+}
+.one-fifth {
+  width: 18%;
+}
+
+.one-other, .one-half, .one-third, .one-fourth, .one-fifth, .two-third, .two-fifth, .three-fourth, .three-fifth {
+  float: left;
+  margin-right: 2.5%;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.clear {
+  clear: both;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+
+.footer-widgets .widget:last-child {
+  margin-bottom: 0;
+}
+.footer-widgets .widget {
+  margin-bottom: 40px;
+}
+
+.footer-widgets .widget h6 {
+  color: #ffffff;
+  font-family: 'Microsoft YaHei' !important;
+  font-size: 16px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #2c2937;
+}
+
+.footer-widgets .widget a {
+  color: #ffffff;
+  font-family: 'Microsoft YaHei' !important;
+  font-size: 16px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.footer-widgets p {
+  color: #ffffff;
+}
+p {
+  color: #312f2f;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 20px;
+  font-family: 'Microsoft YaHei' !important;
+}
+
+.footer-widgets .widget:last-child {
+  margin-bottom: 0;
+}
+
+.footer-widgets .widget-info p {
+  color: #ffffff;
+}
+.widget-info p {
+  margin-bottom: 0;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+    /* Mobile Version */
+    @media only screen and (max-width : 690px) {   
+        .content-inner, .slideshow-container-2 .text-slider {
+            max-width: 300px !important;
+            width: 300px;
+        }
+    	.one-other,.one-half, .one-third, .one-fourth, .one-fifth, .two-third, .two-fifth, .three-fourth, .three-fifth {
+            margin-right: 0;
+            margin-bottom: 40px;
+        }
+        .one-other,.one-half, .one-third, .one-fourth, .one-fifth, .two-third, .two-fifth, .three-fourth, .three-fifth {
+            width: 100% !important;
+        }
+    }
+	
+	

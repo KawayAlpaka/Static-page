@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="*/*">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>幕格云信</title>
+    <link href="./../dist/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./../dist/js/jquery-2.1.3.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./../dist/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <style>
+        .f-YaHei{
+            font-family: "Microsoft YaHei" ! important;
+        }
+
+        .h-font{
+            font-weight: 900;
+        }
+
+        .c84{
+            color:#757c84;
+        }
+
+        .f12{
+            font-size: 12px;
+        }
+
+        .f14{
+            font-size: 14px;
+        }
+
+        .f16{
+            font-size: 16px;
+        }
+
+        .f18{
+            font-size: 18px;
+        }
+
+        .f22{
+            font-size: 22px;
+            font-weight: 400;
+            color: #757c84;
+            padding-top: 22px;
+        }
+
+        .f24{
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .f19{
+            font-size: 21px;
+            font-weight: 400;
+        }
+
+        .g-fr{
+            float:right;
+        }
+
+        .g-fl{
+            float: left;
+        }
+        .notice{
+            float: left;
+            width: 100px;
+            font-weight: 600;
+            border-right: solid 1px #e4e4e4;
+            text-align: center;
+        }
+
+        .news{
+            height: 22px;
+            padding: 9px 0;
+            border-bottom: solid 1px #e4e4e4;
+            line-height: 22px;
+            overflow: hidden;
+            font-size: 14px;
+            background: #fff;
+        }
+
+        .news-list{
+            width: 690px;
+            margin: 0 22px;
+            height: 22px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {list-style-type:none;}
+
+        .border-b{
+            border-bottom: 1px solid #f6f6f6;
+        }
+
+        .border-l-r{
+            border-right: 1px solid #f6f6f6;
+            border-left: 1px solid #f6f6f6;
+        }
+
+        .main-color{
+            color: #ff6e67;
+        }
+
+        .fc-acb3bb{
+            color:  #acb3bb;
+        }
+
+        .fc-75768a{
+           color:#75768a
+        }
+
+        .fc-757c84{
+            color: #757c84;
+        }
+
+        .s-line{
+            margin-top: -12px
+        }
+
+        .out-border{
+            margin-top: 9px;
+            border: 1px solid #f6f6f6;
+        }
+        .main-border{
+            border-top:2px solid #ff6e67;
+        }
+        .hot-back{
+            background:url(img/ico/hot.png) no-repeat top
+
+        }
+        .product-back{
+            background:url(img/ico/hot-product.png) no-repeat top
+        }
+        .safe-product-95{
+            background:url(img/ico/safe-product-95.png) no-repeat top
+        }
+        .red_black{
+            background:url(img/ico/red_blak.png) no-repeat top
+        }
+        .partner_black{
+            background:url(img/ico/partner.png) no-repeat top
+        }
+        .time_black{
+            background:url(img/ico/time-icon.png) no-repeat top
+        }
+        .more_but{
+            border: none;
+            background:url(img/ico/more.png) no-repeat top
+        }
+        .carousel-button{
+            border: none;
+            background:url(img/ico/carousel-button.png) no-repeat top;
+            width:60px;
+            height:40px;
+            margin-left: 10px;
+        }
+
+        .fc-ff8b8c{
+             color: #ff8b8c;
+         }
+        .fc-d3d8dc{
+            color: #B1B6BB;
+        }
+
+        .fc-ababb7{
+            color: #ababb7;
+        }
+
+        .fc-6e6a69{
+            color: #6e6a69;
+            font-weight: 600;
+        }
+
+        .fc-weight{
+            font-weight: 600;
+        }
+
+        .ranking{
+            margin-left: 20px;
+            color: white;
+            background-color: #ff6e67
+        }
+
+        .ranking-hr{
+            border-top:1px solid #f6f6f6;
+            margin-top: 7px;
+        }
+
+        .ranking-margin{
+            margin-left: 30px
+        }
+
+        .ranking-amount{
+            margin-left: 80px
+        }
+
+        .blur1 {
+            filter: alpha(opacity=80);
+            -moz-opacity:0.8;
+            -khtml-opacity: 0.3;
+            opacity: 0.8;
+        }
+        .blur2 {
+            filter: alpha(opacity=80);
+            -moz-opacity:0.6;
+            -khtml-opacity: 0.3;
+            opacity: 0.6;
+        }
+
+        .blur3 {
+            filter: alpha(opacity=80);
+            -moz-opacity:0.4;
+            -khtml-opacity: 0.3;
+            opacity: 0.4;
+        }
+
+        .tr-height{
+            height: 30px
+        }
+
+        .title-margin-top{
+            margin-top: 25px;
+        }
+
+        .wallet-icon{
+            background:url(img/ico/wallet-icon.png) no-repeat top;
+        }
+
+        .main-bgcolor{
+            background-color: #f6f6f6;
+        }
+        .bgcolor-none{
+            background-color: white
+        }
+
+        .notic-p{
+            height: 45px;padding-top: 10px
+        }
+
+        .radius-left{
+            border-bottom-left-radius:10px 10px
+        }
+
+        .radius-right{
+            border-bottom-right-radius:10px 10px
+        }
+
+        .radius-top-left{
+            border-top-left-radius:10px 10px
+        }
+
+        .radius-top-right{
+            border-top-right-radius:10px 10px
+        }
+        .carousel-indicators li {
+            display: inline-block;
+            width: 55px;
+            height: 8px;
+            text-indent: -999px;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 1px
+        }
+
+        .carousel-indicators .active {
+            width: 55px;
+            height: 8px;
+            background-color: #ff6f66;
+            border: none;
+        }
+
+        .carousel-indicators {
+            bottom: 8px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 7px;
+            left: 50%;
+            z-index: 15;
+            width: 14%;
+            padding-left: 0;
+            margin-left: -30%;
+            text-align: center;
+            list-style: none;
+        }
+
+        .mr{
+            padding-top: 15px;
+            text-align: right;
+            margin-bottom: 10px;
+            margin-right:23px
+        }
+
+        .product-card{
+            padding-left: 1px;
+        }
+
+        .hot-img{
+            margin-top:-20px;
+            margin-left: -5px;
+        }
+
+        .card-line{
+            border-top: 1px solid #d3d8dc;
+            margin-left: -30px;
+            margin-bottom: 5px;
+            margin-top: 1px
+        }
+
+        .card-li{
+            padding-top: 35px;
+            margin-left: 30px
+        }
+
+        .card-tab{
+            font-weight: 600;
+            height: 30px
+        }
+
+        .card-name{
+           margin-left: 15px
+        }
+
+        .card-main-li{
+            padding-top: 15px
+        }
+
+        .info-card{
+            margin-top: 50px
+        }
+
+        td{
+           color: #757c84
+        }
+
+        .progress-bar-danger1{
+            background-color: #ff6e67;
+        }
+
+        .partner-pnl{
+            text-align: left;
+            height: 80px;
+            padding-top: 5px
+        }
+
+        .partner-img{
+            height: 25px;
+            width: 5px
+        }
+
+        .partner-tab{
+            background-color: white;
+            margin-right: 15px;
+            text-align:center
+        }
+
+        .partner-bank{
+            display: block;
+            cursor:pointer
+        }
+
+        .round {
+              -moz-border-radius: 3px;      /* Gecko browsers */
+              -webkit-border-radius: 3px;   /* Webkit browsers */
+              border-radius:3px;            /* W3C syntax */
+              margin-left: 5px;
+        }
+
+        .product-title{
+           margin-right: 25px
+        }
+
+        .thumbnail{
+            display: block;
+            padding: 4px;
+            margin-bottom: 10px;
+            margin-right: -10px;
+            line-height: 1.42857143;
+            background-color: #fff;
+            border: 1px solid #EDEBEB;
+            border-radius: 4px;
+            transition: border .2s ease-in-out;
+            border-top:2px solid #ff6e67;
+        }
+
+    </style>
+</head>
+<body class="main-bgcolor f-YaHei">
+    <div class="container" style="width: 100%;">
+        <li id="myCarousel" class="carousel slide" style="list-style-type: none;">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner" align="center">
+                <div class="item active">
+                    <img src="img/banner/Banner1.png" alt="First slide">
+                </div>
+                <div class="item">
+                    <img src="img/banner/Banner2.png" alt="Second slide">
+                </div>
+                <div class="item">
+                    <img src="img/banner/Banner3.png" alt="Third slide">
+                </div>
+            </div>
+        </li>
+    </div>
+
+    <div class="container" align="center">
+        <div class="row border-b border-l-r bgcolor-none notic-p">
+                <span style="width: 110px;text-align: center" class="f18 notice fc-757c84">网站公告</span>
+                <div>
+                    <ul  class="news-list g-fl">
+                        <!--<marquee direction=up scrollamount=1>-->
+                            <li>
+                                <span class="g-fr fc-acb3bb"><img src="img/ico/time-icon.png" style="margin-right: 20px">2015-7-20</span>
+                                <a href="#" class="c84 g-fl fc-weight">关于幕格宜贷通平台维护的公告</a>
+                            </li>
+                        <!--</marquee>-->
+                    </ul>
+                    <button class="more_black more_but">　　　　</button>
+                    <button class="carousel-button" style="margin-top: -20px">　　　　</button>
+                </div>
+        </div>
+        <div class="row border-b border-l-r bgcolor-none bottom-radius radius-right radius-left">
+            <div class="col-md-4 title-margin-top" style="margin-bottom: 20px">
+                <span class="f22 c84 f-YaHei">
+                    <img src="img/ico/wallet-icon.png" style="height: 22px;width: 15px">
+                    宜贷通平台已撮合贷款
+                </span>
+                <div style="padding-top: 10px; margin-left: -40px;margin-bottom: 15px">
+                    <span class="main-color f22">10</span>亿
+                    <span class="main-color f22">2564</span>万
+                    <span class="main-color f22">3698</span>元
+                </div>
+                <hr style="border-top:1px solid #f6f6f6;" />
+                <div style="padding-left: 60px;margin-top: -30px" align="left">
+                    <li class="f22 c84" >累计合作</li>
+                    <table class="fc-757c84" width="100%" style="margin-top: 10px">
+                        <tr>
+                            <td class="main-color f19">4000</td>
+                            <td class="main-color f19">1000</td>
+                            <td class="main-color f19">600</td>
+                        </tr>
+                        <tr>
+                            <td>贷款客户</td>
+                            <td>信贷经理</td>
+                            <td>小贷公司</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-4 border-l-r title-margin-top bgcolor-none f-YaHei">
+                <span class="f22 c84"> 30天平台佣金排行榜</span>
+                <div style="margin-top: 33px">
+                    <li>
+                        <span class="g-fl f12 ranking">&nbsp;1&nbsp;</span>
+                        <span class="g-fl f14 ranking-margin" >刘经理</span>
+                        <span class="g-fl f14 fc-acb3bb ranking-margin">深圳</span>
+                        <span class="f14 fc-6e6a69 ranking-amount">￥5000</span>
+                    </li>
+                    <li style="height: 10px"><hr class="ranking-hr" /></li>
+
+                    <li>
+                        <span class="g-fl f12 ranking blur1">&nbsp;2&nbsp;</span>
+                        <span class="g-fl f14 ranking-margin" >胡经理</span>
+                        <span class="g-fl f14 fc-acb3bb ranking-margin">深圳</span>
+                        <span class="f14 fc-6e6a69 ranking-amount">￥5000</span>
+                    </li>
+                    <li style="height: 10px"><hr class="ranking-hr" /></li>
+
+                    <li>
+                        <span class="g-fl f12 ranking blur2">&nbsp;3&nbsp;</span>
+                        <span class="g-fl f14 ranking-margin" >陈经理</span>
+                        <span class="g-fl f14 fc-acb3bb ranking-margin">深圳</span>
+                        <span class="f14 fc-6e6a69 ranking-amount">￥5000</span>
+                    </li>
+                    <li style="height: 10px"><hr class="ranking-hr" /></li>
+
+                    <li>
+                        <span class="g-fl f12 ranking blur3">&nbsp;4&nbsp;</span>
+                        <span class="g-fl f14 ranking-margin" >欧经理</span>
+                        <span class="g-fl f14 fc-acb3bb ranking-margin">深圳</span>
+                        <span class="f14 fc-6e6a69 ranking-amount">￥5000</span>
+                    </li>
+                </div>
+            </div>
+            <div class="col-md-4 title-margin-top">
+                <span class="f22 c84">热门信贷机构</span>
+                <div  style="margin-top: 20px;text-align: left">
+                    <table width="100%">
+                        <tr style="height: 30px">
+                            <td  nowrap style=";font-size:12px;width:30%">浩深小额贷款有限公司</td>
+                            <td width="50%">
+                                <div class="progress-bar progress-bar-danger1 round" role="progressbar" aria-valuenow="40" aria-valuemin="0"  aria-valuemax="100" style="color:#ff6e67 ;height: 6px;font-size:12px;width: 90%">
+                                </div>
+                            </td>
+                            <td  width="20%">521单</td>
+                        </tr>
+                        <tr style="height: 30px">
+                            <td nowrap style="font-size:12px;width:30%">金融联贷款机构</td>
+                            <td  style="align:left"  >
+                                <div class="progress-bar progress-bar-danger1 round" role="progressbar" aria-valuenow="40" aria-valuemin="0"  aria-valuemax="100" style="height: 6px;font-size:12px;width: 80%">
+                                </div>
+                            </td>
+                            <td  width="20%">441单</td>
+                        </tr>
+                        <tr style="height: 30px">
+                            <td nowrap style="font-size:12px;width:30%">金融联贷款机构</td>
+                            <td  style="align:left"  >
+                                <div class="progress-bar progress-bar-danger1 round" role="progressbar" aria-valuenow="40" aria-valuemin="0"  aria-valuemax="100"  style="height: 6px;font-size:12px;width: 70%">
+                                </div>
+                            </td>
+                            <td  width="20%">351单</td>
+                        </tr>
+                        <tr style="height: 30px">
+                            <td nowrap style="font-size:12px;width:30%">冒险岛小额贷款有限公司</td>
+                            <td  style="align:left"  >
+                                <div class="progress-bar progress-bar-danger1 round" role="progressbar" aria-valuenow="40" aria-valuemin="0"  aria-valuemax="100"  style="height: 6px;font-size:12px;width: 60%">
+                                </div>
+                            </td>
+                            <td  width="20%">261单</td>
+                        </tr>
+                        <tr style="height: 30px">
+                            <td nowrap style="font-size:12px;width:30%">优先贷款公司</td>
+                            <td  style="align:left"  >
+                                <div class="progress-bar progress-bar-danger1 round" role="progressbar" aria-valuenow="40" aria-valuemin="0"  aria-valuemax="100" style="height: 6px;font-size:12px;width: 50%">
+                                </div>
+                            </td>
+                            <td  width="20%">171单</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row out-border bgcolor-none radius-top-left radius-top-right radius-left radius-right" style="padding-bottom: 25px">
+            <div class="col-md-4">
+                <div class="info-card">
+                    <img  src="img/ico/palm-icon.png" data-holder-rendered="true" style="display: block;cursor:pointer" onclick="">
+                </div>
+                <p class="f22"> 合作资源 </p>
+                <p class="f16  fc-acb3bb">高质量客户、专家和合作机构资源，</p>
+                <p class="f16  fc-acb3bb s-line">提升合作效率，实现共赢！</p>
+            </div>
+            <div class="col-md-4">
+                <div class="info-card">
+                    <img  src="img/ico/target -icon.png" data-holder-rendered="true" style="display: block;cursor:pointer" onclick="">
+                </div>
+                <div class="f22" style="margin-bottom: 8px">  精准风控 </div>
+                <p class="f16 fc-acb3bb">不断优化信贷风控模式，完善的信用违</p>
+                <p class="f16 fc-acb3bb s-line">约评价体系，可依赖，安心贷！</p>
+            </div>
+            <div class="col-md-4">
+                <div class="info-card">
+                    <img  src="img/ico/pig-icon.png" data-holder-rendered="true" style="display: block;cursor:pointer;padding-top: 6px" onclick="">
+                </div>
+                <div class="f22" style="margin-bottom: 8px"> 提升价值  </div>
+                <p class="f16 fc-acb3bb">超高反佣，流程便捷，及时兑现，解决您的</p>
+                <p class="f16 fc-acb3bb s-line">后顾之忧，业绩优先，不断提升价值！</p>
+            </div>
+        </div>
+
+        <div style="text-align: left;height: 80px;" class="row">
+            <li class="f22">
+                <img src="img/ico/red_blak.png" style="height: 25px;width: 5px">
+                <span>小额贷款产品推荐</span>
+            </li>
+            <hr style="border-top:1px solid #d3d8dc;" />
+        </div>
+
+        <div class="row" style="text-align: left;padding-bottom: 10px;">
+            <li class="f14 fc-ababb7" >
+                <span class="g-fl fc-weight fc-ababb7" style="font-size: 13px">每日更新宜贷通热销产品</span>
+                <span class="g-fr "><a href="#" class="main-color f12">查看更多>></a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </li>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 product-card">
+                <div class="thumbnail main-border" >
+                   <li class="card-main-li">
+                       <img src="img/ico/hot-icon.png" class="g-fl hot-img">
+                       <span class="f18 g-fl">做客贷</span>
+                       <span class="f16 g-fr product-title">
+                           <span>已有</span><span class="main-color f18">50人</span><span>申请</span>
+                       </span>
+                   </li>
+                   <li class="card-li">
+                        <hr class="card-line">
+                        <table width="100%">
+                            <tr align="center"><td class="fc-ff8b8c f22" >2.9%</td><td class="fc-ff8b8c f22">5周</td><td class="fc-ff8b8c f22">90%</td></tr>
+                            <tr class="f16 fc-757c84 card-tab"  align="center"><td>综合利率</td><td>放款周期</td><td>平均成功率</td></tr>
+                        </table>
+                   </li>
+                   <li class="fc-d3d8dc f18 mr">
+                       浩森小额贷款有限公司12
+                   </li>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-card ">
+                <div class="thumbnail main-border">
+                    <li class="card-main-li">
+                        <img src="img/ico/hot-icon.png" class="g-fl hot-img">
+                        <span class="f18 g-fl">做客贷</span>
+                        <span class="f16 g-fr product-title" >
+                           <span>已有</span><span class="main-color f18">50人</span><span>申请</span>
+                        </span>
+                    </li>
+                    <li class="card-li">
+                        <hr class="card-line">
+                        <table width="100%">
+                            <tr align="center"><td class="fc-ff8b8c f22" >2.9%</td><td class="fc-ff8b8c f22">5周</td><td class="fc-ff8b8c f22">90%</td></tr>
+                            <tr class="f16 fc-757c84 card-tab" align="center"><td >综合利率</td><td>放款周期</td><td>平均成功率</td></tr>
+                        </table>
+                    </li>
+                    <li class="fc-d3d8dc f18 mr">
+                        浩森小额贷款有限公司
+                    </li>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-card">
+                <div class="thumbnail main-border">
+                    <li class="card-main-li">
+                       <img src="img/ico/safe-icon.png" class="g-fl" style="margin-left: 10px">
+                       <span class="f18 g-fl card-name">做客贷</span>
+                       <span class="f16 g-fr product-title" >
+                           <span>已有</span><span class="main-color f18">50人</span><span>申请</span>
+                       </span>
+                    </li>
+                    <li class="card-li">
+                        <hr class="card-line">
+                        <table width="100%">
+                            <tr align="center"><td class="fc-ff8b8c f22" >2.9%</td><td class="fc-ff8b8c f22">5周</td><td class="fc-ff8b8c f22">90%</td></tr>
+                            <tr class="f16 fc-757c84 card-tab"  align="center"><td >综合利率</td><td>放款周期</td><td>平均成功率</td></tr>
+                        </table>
+                    </li>
+                    <li class="fc-d3d8dc f18 mr">
+                        浩森小额贷款有限公司
+                    </li>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-card">
+                <div class="thumbnail main-border">
+                    <li class="card-main-li">
+                        <img src="img/ico/safe-icon.png" class="g-fl" style="margin-left: 10px">
+                        <span class="f18 g-fl card-name">做客贷</span>
+                       <span class="f16 g-fr product-title" >
+                           <span>已有</span><span class="main-color f18">50人</span><span>申请</span>
+                       </span>
+                    </li>
+                    <li class="card-li">
+                        <hr class="card-line">
+                        <table width="100%">
+                            <tr align="center"><td class="fc-ff8b8c f22" >2.9%</td><td class="fc-ff8b8c f22">5周</td><td class="fc-ff8b8c f22">90%</td></tr>
+                            <tr class="f16 fc-757c84 card-tab"  align="center"><td >综合利率</td><td>放款周期</td><td>平均成功率</td></tr>
+                        </table>
+                    </li>
+                    <li class="fc-d3d8dc f18 mr">
+                        浩森小额贷款有限公司
+                    </li>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-card">
+                <div class="thumbnail main-border">
+                    <li class="card-main-li">
+                        <img src="img/ico/safe-icon.png" class="g-fl" style="margin-left: 10px">
+                        <span class="f18 g-fl card-name">做客贷</span>
+                       <span class="f16 g-fr product-title" >
+                           <span>已有</span><span class="main-color f18">50人</span><span>申请</span>
+                       </span>
+                    </li>
+                    <li class="card-li">
+                        <hr class="card-line">
+                        <table width="100%">
+                            <tr align="center"><td class="fc-ff8b8c f22" >2.9%</td><td class="fc-ff8b8c f22">5周</td><td class="fc-ff8b8c f22">90%</td></tr>
+                            <tr class="f16 fc-757c84 card-tab"  align="center"><td >综合利率</td><td>放款周期</td><td>平均成功率</td></tr>
+                        </table>
+                    </li>
+                    <li class="fc-d3d8dc f18 mr">
+                        浩森小额贷款有限公司
+                    </li>
+                </div>
+            </div>
+
+            <div class="col-lg-4 product-card">
+                <div class="thumbnail main-border" >
+                    <li class="card-main-li">
+                       <span class="f18 g-fl" style="margin-left: 30px ">做客贷</span>
+                       <span class="f16 g-fr product-title" >
+                           <span>已有</span><span class="main-color f18">50人</span><span>申请</span>
+                       </span>
+                    </li>
+                    <li class="card-li">
+                        <hr class="card-line">
+                        <table width="100%">
+                            <tr align="center"><td class="fc-ff8b8c f22" >2.9%</td><td class="fc-ff8b8c f22">5周</td><td class="fc-ff8b8c f22">90%</td></tr>
+                            <tr class="f16 fc-757c84 card-tab"  align="center"><td >综合利率</td><td>放款周期</td><td>平均成功率</td></tr>
+                        </table>
+                    </li>
+                    <li class="fc-d3d8dc f18 mr">
+                        浩森小额贷款有限公司
+                    </li>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row partner-pnl" >
+            <li class="f22">
+                <!--span class="red_black" style="margin-left: 5px">&nbsp;</span>-->
+                <img src="img/ico/red_blak.png"  class="partner-img">
+                <span>与我们合作的机构</span>
+            </li>
+        </div>
+
+        <div class="row">
+            <table width="99%" class="table-bordered partner-tab" >
+                <tr>
+                    <td width="20%" align="center">
+                        <img  src="img/bank/1.png" data-holder-rendered="true" align="center" class="partner-bank" onclick="">
+                    </td>
+                    <td width="15%" align="center"><img  src="img/bank/2.png" data-holder-rendered="true" class="partner-bank" onclick=""></td>
+                    <td width="15%" align="center"><img  src="img/bank/3.png" data-holder-rendered="true" class="partner-bank" onclick=""></td>
+                    <td width="15%" align="center"><img  src="img/bank/4.png" data-holder-rendered="true" class="partner-bank" onclick=""></td>
+                    <td width="15%" align="center"> <img  src="img/bank/5.png" data-holder-rendered="true" class="partner-bank" onclick=""></td>
+                </tr>
+                <tr>
+                    <td align="center"> <img  src="img/bank/6.png" data-holder-rendered="true" class="partner-bank" onclick=""></td>
+                    <td align="center"><img  src="img/bank/7.png" data-holder-rendered="true" class="partner-bank" onclick=""></td>
+                    <td align="center"><img  src="img/bank/8.png" data-holder-rendered="true" class="partner-bank" onclick=""></td>
+                    <td align="center"><img  src="img/bank/9.png" data-holder-rendered="true" class="partner-bank" onclick=""></td>
+                    <td align="center"> <img  src="img/bank/10.png" data-holder-rendered="true" class="partner-bank" onclick=""></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>
