@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全屏滚动</title>
+    <style>
+        body{
+            overflow:hidden;
+        }
+        .all{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: top 1s;
+            overflow:hidden;
+        }
+        .ap{
+            overflow:hidden;
+        }
+    </style>
+    <script>
+        function getElementsByClass(c) {
+            var allElements = document.getElementsByTagName("*");
+            var elements = [];
+            for(var i=0 ;i<allElements.length ; i++){
+                if(allElements[i].className.indexOf(c) >=0){
+                    elements.push(allElements[i])
+                }
+            }
+            return elements;
+        }
+
+        window.onload = function () {
+            aps = getElementsByClass("ap");
+            setApheigth();
+        };
+
+        window.onresize = function () {
+            setApheigth();
+        };
+
+        var index = 0;
+        var aps = null;
+
+        function scrollFunc(e) {
+            if(e.deltaY > 0){
+                if(index < aps.length -1 ){
+                    console.log("向下滚动");
+                    var all = getElementsByClass("all")[0];
+
+                    var top = all.style.top.split("px")[0] - document.documentElement.clientHeight;
+                    all.style.top = top + "px";
+                    index ++;
+                }
+
+            }else if(e.deltaY < 0){
+                if(index > 0 ){
+                    console.log("向上滚动");
+                    var all = getElementsByClass("all")[0];
+                    var top = parseInt(all.style.top.split("px")[0]) + document.documentElement.clientHeight;
+                    console.log(parseInt(all.style.top.split("px")[0] ));
+                    all.style.top = top + "px";
+                    index --;
+                }
+            }
+            window.onmousewheel=document.onmousewheel= null;
+            setTimeout(function () {
+                window.onmousewheel=document.onmousewheel= scrollFunc;
+            },
+            1000);
+        }
+
+        window.onmousewheel=document.onmousewheel= scrollFunc;
+
+        function setApheigth() {
+
+            for(var i=0;i<aps.length ;i++){
+                aps[i].style.height = document.documentElement.clientHeight + "px";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div class="all" style="top: 0px">
+        <div class="ap active">1
+            <!--<img src="section5.jpg" alt="">-->
+        </div>
+        <div class="ap">2</div>
+        <div class="ap">3</div>
+        <div class="ap">4</div>
+    </div>
+</body>
+</html>
