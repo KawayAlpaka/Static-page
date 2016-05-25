@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义菜单</title>
+    <style>
+        #my-menu{
+            width: 200px;
+            height: auto;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            display: none;
+            background-color: wheat;
+        }
+        #my-menu div:hover{
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var myMenu = document.getElementById("my-menu");
+            document.oncontextmenu= function () {
+                myMenu.style.display = "block";
+                return false;
+            };
+//            document.body.onclick= function () {
+            document.onclick= function () {
+                myMenu.style.display = "none";
+            };
+        };
+        function showText(e) {
+//            console.log(this);
+            alert(e.innerHTML);
+        }
+
+    </script>
+</head>
+<body>
+    <div id="my-menu">
+        <div onclick="showText(this)">你好</div>
+        <div onclick="showText(this)">我好</div>
+        <div onclick="showText(this)">大家好</div>
+    </div>
+</body>
+</html>
